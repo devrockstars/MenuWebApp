@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: content-box;
+	
+}
+	body{
+		background-image: url(W9OKrxBqiZA.jpg);
+	}
+	h2{
+		color: aliceblue;
+	}
+	#myInput:hover{
+		font-family: monospace;
+	}
+
+#myInput {
+  
+  
+  width: 100%;
+	font-family: sans-serif;
+  font-size: 15px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #c3c3c3;
+  margin-bottom: 12px;
+	padding-right: 13px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 15px;
+	opacity: 0.9;;
+background: transparent;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 8px;
+}
+	#myTable th:hover{
+		background-color: darkslategrey;
+	}
+
+#myTable tr {
+  border-bottom: 10px solid #ddd;
+}
+
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #404040;
+	font-family: sans-serif;
+}
+	#myTable td {
+		background-color: #d8d8d8;
+	}
+	#myTable td:hover{
+		background-color: darkslategrey;
+		background-size: cover;
+	}
+	h2, table{
+		font-family: monospace;
+	}
+</style>
+</head>
+<body>
+
+<strong><h2>My ADMIN Portal</h2></strong>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for chef name..." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:40%;">Chef Name</th>
+	
+    <th style="width:40%;">Chef Criteria</th>
+	  
+	  <th style="width:40%;">Description</th>
+	  
+	  <th style="width:90%;">Chef Contact</th>
+	  
+  </tr>
+  <tr>
+    <td>Mwesigwa</td>
+	  <td>Vegetables</td>
+	  <td><textarea NAME="Chef" placeholder="e.g Cabbages available" ROWS=5 COLS=30></textarea><input type=submit Name="Submit!"><br></td>
+	  <td>07........</td>
+  </tr>
+  <tr>
+    <td>Mutebi</td>
+	  <td>Cereals</td>
+	  <td><textarea NAME="Chef" placeholder="e.g Beans available" ROWS=5 COLS=30></textarea><input type=submit Name="Submit!"><br></td>
+	  <td>07........</td>
+  </tr>
+  <tr>
+    <td>Aaron</td>
+	  <td>Fruits</td>
+	  <td><textarea NAME="Comments" placeholder="e.g Pineapples and Passion Fruits available" ROWS=5 COLS=30></textarea><input type=submit Name="Submit!"><br></td>
+	  <td>07........</td>
+  </tr>
+  <tr>
+	<td>Mugabi</td>
+	<td>Real Food</td>
+	  <td><textarea NAME="Comments" placeholder="e.g Pineapples and Passion Fruits available" ROWS=5 COLS=30></textarea><input type=submit Name="Submit!"><br></td>
+	  <td>07........</td>
+	</tr>
+  
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
